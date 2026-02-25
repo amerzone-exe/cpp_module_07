@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 09:40:44 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/02/25 16:06:10 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/02/25 17:32:47 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <cstdlib>
 
 #define MAX_VAL 750
-
 
 int main(int, char**)
 {
@@ -30,9 +29,12 @@ int main(int, char**)
     }
     //SCOPE
     {
+		// std::cout << "Assignation : " << std::endl;
         Array<int> tmp = numbers;
+		// tmp.printArray(numbers);
+		// std::cout << "Copy : " << std::endl;
         Array<int> test(tmp);
-		ERROR
+		// test.printArray(tmp);
     }
 
     for (int i = 0; i < MAX_VAL; i++)
@@ -59,7 +61,6 @@ int main(int, char**)
     {
         std::cerr << e.what() << '\n';
     }
-
     for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();

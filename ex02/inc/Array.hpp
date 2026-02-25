@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 10:26:44 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/02/25 16:09:46 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/02/25 17:32:11 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,19 @@ class Array
 	
 		// ~Array( void );
 
+		class WrongIndex : public std::exception
+		{
+			public:
+				const char* what() const throw()
+				{
+					return "Out of range";
+				}
+		};
+		
 		Array( void ) : _array(NULL), _size(0) {}
 		
 		Array( unsigned int n ) : _size(n)
 		{
-			std::cout << n << std::endl;
-			std::cout << _size << std::endl;
 			this->_array = new T[_size];
 		}
 
@@ -67,11 +74,17 @@ class Array
 		T & operator[]( unsigned int index )
 		{
 			// std::cout << "index : " << index << "_size : " << this->_size << std::endl;
-			if (index > this->_size)
+			if (index >= this->_size)
 			{
-				throw std::out_of_range("wrong index");
+				throw std::out_of_range("Index out of range");
 			}
 			return this->_array[index];
+		}
+
+		void	printArray( const Array & cmp )
+		{
+			for (unsigned int i = 0; i < _size; i++)
+				std::cout << _array[i] << " | " << cmp._array[i] << std::endl;
 		}
 
 		~Array( void ) 
@@ -79,7 +92,7 @@ class Array
 			if (this->_array != NULL)
 				delete [] this->_array;
 		}
-		
+
 		unsigned int	size( void )
 		{
 			return _size;
