@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   whatever..hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jocelyn <jocelyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 15:58:29 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/02/24 16:27:45 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/02/26 12:32:56 by jocelyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WHATEVER_HPP
 #define WHATEVER_HPP
 
-template <typename Tpl>
-void	swap(Tpl & a, Tpl & b)
+template <typename T>
+void	swap(T & a, T & b)
 {
-	Tpl temp = a;
+	T temp = a;
 
 	a = b;
 	b = temp;
 }
 
-template <typename Tpl>
-Tpl		min(Tpl const & a, Tpl const & b)
+template <typename T>
+T		min(T const & a, T const & b)
 {
 	if (a < b)
 		return a;
@@ -31,8 +31,8 @@ Tpl		min(Tpl const & a, Tpl const & b)
 		return b;
 }
 
-template <typename Tpl>
-Tpl		max(Tpl const & a, Tpl const & b)
+template <typename T>
+T		max(T const & a, T const & b)
 {
 	if (a > b)
 		return a;

@@ -2,7 +2,7 @@ NAME = Array
 
 CXX = c++
 
-FLAGS = -Wall -Wextra -Werror -g3 -MMD -std=c++98
+FLAGS = -Wall -Wextra -Werror -MMD -std=c++98
 
 INC = inc
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jocelyn <jocelyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 16:28:33 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/02/24 18:40:01 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/02/26 12:30:36 by jocelyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 #include <string>
 
 template <typename T, typename F>
-void	iter(T * array, unsigned int lenght, F function)
+void	iter(T * array, const unsigned int lenght, F function)
 {
 	for (unsigned int i = 0; i < lenght; ++i)
 		function(array[i]);
 }
 
-template <typename Y>
-void	print( Y const & c)
+template <typename T>
+void	print( T const & c)
 {
 	std::cout << c << " " << std::flush;
 }

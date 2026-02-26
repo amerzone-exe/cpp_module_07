@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jocelyn <jocelyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 16:26:13 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/02/24 18:41:59 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/02/26 12:32:26 by jocelyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,21 @@ void	to_lower( std::string & str )
 int main(void)
 {
 	int n[4] = {15, 20, 5, 3};
-	std::string str[6] = {"hello", "world", "HOW", "ARe", "yOu", "?"};
+	const std::string str[6] = {"hello", "world", "HOW", "ARe", "yOu", "?"};
 
 	::iter(n, 4, increment);
 	::iter(n, 4, print<int>);
 	NLINE;
 
-	::iter(str, 6, print<std::string>);
+	::iter(str, 6, print<const std::string>);
 	NLINE;
 	
 	::iter(str, 6, to_upper);
-	::iter(str, 6, print<std::string>);
+	::iter(str, 6, print<const std::string>);
 	NLINE;
 	
 	::iter(str, 6, to_lower);
-	::iter(str, 6, print<std::string>);
+	::iter(str, 6, print<const std::string>);
 
 	return 0;
 }

@@ -3,24 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jocelyn <jocelyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 09:40:44 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/02/25 17:32:47 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/02/26 12:23:46 by jocelyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <Array.hpp>
 #include <cstdlib>
+
+#include "Array.hpp"
 
 #define MAX_VAL 750
 
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
+	Array<std::string> str(3);
+	const Array<int> integer(3);
     int* mirror = new int[MAX_VAL];
+
     srand(time(NULL));
+
+	/*Initialization's check*/
+	std::cout << str[0] << std::endl;
+	std::cout << integer[0] << std::endl;
+
     for (int i = 0; i < MAX_VAL; i++)
     {
         const int value = rand();
