@@ -8,8 +8,7 @@ INC = inc
 
 OBJDIR = obj/
 
-SRC =	main.cpp \
-#		Array.tpp
+SRC =	main.cpp
 
 OBJ := $(addprefix $(OBJDIR), $(SRC:.cpp=.o))
 DEPS = $(OBJ:.o=.d)
