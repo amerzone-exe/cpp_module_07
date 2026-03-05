@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocelyn <jocelyn@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 10:26:44 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/02/26 12:23:02 by jocelyn          ###   ########.fr       */
+/*   Updated: 2026/03/05 11:34:53 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
-
-#define ERROR std::cout << "ERROR" << std::endl;
 
 #include <exception>
 
@@ -22,19 +20,19 @@ class Array
 {
 	private:
 		T*				_array;
-		unsigned int	_size;
+		size_t			_size;
 
 	public:
 		Array( void );
-		Array( unsigned int n );
+		Array( size_t n );
 		Array( Array const & src );
 
 		Array &		operator=( Array const & rightSide );
-		T &			operator[]( unsigned int index );
-		const T &	operator[]( const unsigned int index ) const;
+		T &			operator[]( size_t index );
+		const T &	operator[]( const size_t index ) const;
 
-		unsigned int	size( void );
-		void			printArray( const Array & cmp );
+		size_t		size( void );
+		void		printArray( const Array & cmp );
 
 		~Array( void );
 };

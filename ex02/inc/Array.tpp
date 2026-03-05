@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocelyn <jocelyn@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 11:49:39 by jocelyn           #+#    #+#             */
-/*   Updated: 2026/02/26 12:24:59 by jocelyn          ###   ########.fr       */
+/*   Updated: 2026/03/04 17:12:14 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #define ARRAY_TPP
 
 template <typename T>
-Array<T>::Array(void) : _array(), _size(0) {}
+Array<T>::Array(void) : _array(NULL), _size(0) {}
 
 template <typename T>
-Array<T>::Array(unsigned int n) : _size(n)
+Array<T>::Array(size_t n) : _size(n)
 {
 	this->_array = new T[_size]();
 }
@@ -26,7 +26,7 @@ template <typename T>
 Array<T>::Array(Array const &src) : _size(src._size)
 {
 	this->_array = new T[src._size];
-	for (unsigned int i = 0; i < src._size; i++)
+	for (size_t i = 0; i < src._size; i++)
 		this->_array[i] = src._array[i];
 }
 
@@ -39,14 +39,14 @@ Array<T> & Array<T>::operator=(Array<T> const &rightSide)
 		if (this->_array != NULL)
 			delete[] this->_array;
 		this->_array = new T[rightSide._size];
-		for (unsigned int i = 0; i < rightSide._size; i++)
+		for (size_t i = 0; i < rightSide._size; i++)
 			this->_array[i] = rightSide._array[i];
 	}
 	return *this;
 }
 
 template <typename T>
-T & Array<T>::operator[](const unsigned int index)
+T & Array<T>::operator[](const size_t index)
 {
 	if (index >= this->_size)
 	{
@@ -56,7 +56,7 @@ T & Array<T>::operator[](const unsigned int index)
 }
 
 template <typename T>
-const T & Array<T>::operator[](const unsigned int index) const
+const T & Array<T>::operator[](const size_t index) const
 {
 	if (index >= this->_size)
 	{
@@ -68,7 +68,7 @@ const T & Array<T>::operator[](const unsigned int index) const
 template <typename T>
 void Array<T>::printArray(const Array &cmp)
 {
-	for (unsigned int i = 0; i < _size; i++)
+	for (size_t i = 0; i < _size; i++)
 		std::cout << _array[i] << " | " << cmp._array[i] << std::endl;
 }
 
@@ -80,7 +80,7 @@ Array<T>::~Array(void)
 }
 
 template <typename T>
-unsigned int Array<T>::size(void)
+size_t Array<T>::size(void)
 {
 	return _size;
 }
