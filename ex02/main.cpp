@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 09:40:44 by jpiquet           #+#    #+#             */
-/*   Updated: 2026/03/05 11:38:45 by jpiquet          ###   ########.fr       */
+/*   Updated: 2026/03/05 11:42:28 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int main(int, char**)
 		// tmp.printArray(numbers);
 		// std::cout << "Copy : " << std::endl;
         Array<int> test(tmp);
+		Array<std::string> cpy(str);
 		// test.printArray(tmp);
     }
 
